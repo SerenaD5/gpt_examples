@@ -25,8 +25,8 @@ response_service = ResponseService()
 question = 'Where to find treasure chests?'
 # Get the intent
 intents = intent_service.get_intent(question)
-# Get the facts
-facts = data_service.search_redis(intents)
+# Get the facts # 当用户提问时，通过搜索获取相关数据
+facts = data_service.search_redis(intents) # 这里使用了存储的数据
 # Get the answer
 answer = response_service.generate_response(facts, question)
 print(answer)
